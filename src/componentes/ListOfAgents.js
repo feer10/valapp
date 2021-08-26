@@ -1,17 +1,15 @@
-import React, {useEffect, useState} from 'react'
+import React from 'react'
 import AgentsIcon from './AgentsIcons'
-import getAgents from '../services/getAgents';
+import { useAgents } from '../hooks/useAgents';
 
-export default function ListOfAgents () {
-    const [agents, setAgents] = useState([]) 
-
-    useEffect(function () {
-        getAgents().then(agents => setAgents(agents))
-    }, [])
+export default function ListOfAgents (params) {
+    const { agent } = params
+    const {agents} = useAgents({agent})
 
     return agents.map(({ uuid, displayIconSmall, displayName }) =>
         <AgentsIcon 
         key={uuid}
+        agentId={uuid}
         displayIconSmall={displayIconSmall}
         displayName={displayName}
         />

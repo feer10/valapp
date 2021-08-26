@@ -20,9 +20,9 @@ export default function BottomNav () {
 
     function toggleActiveStyles(index) {
         if (activeClass.menuLinks[index] === activeClass.activeMenu) {
-            return "w-1/5 border-r border-white p-sm hover:bg-gray-100 hover:text-black bg-gray-100 text-black"
+            return "w-1/5 border-r border-white p-sm hover:bg-gray-100 hover:text-black bg-gray-100 text-black last:border-r-0"
         } else {
-            return "w-1/5 border-r border-white p-sm hover:bg-gray-100 hover:text-black"
+            return "w-1/5 border-r border-white p-sm hover:bg-gray-100 hover:text-black last:border-r-0"
         }
     }
 
