@@ -24,7 +24,7 @@ function App() {
           flex flex-wrap text-white p-4 items-center shadow-lg justify-center">
             <img src={process.env.PUBLIC_URL + "/valorantlogo.png"} alt='logo' className="h-full" />
           </header>
-          <section className="main_wrapper pb-20 pt-28 bg-gray-800 min-h-screen
+          <section className="main_wrapper pb-20 pt-20 bg-gray-800 min-h-screen
           flex flex-wrap text-white items-center justify-center">
             <Switch>
               <AgentsContextProvider>

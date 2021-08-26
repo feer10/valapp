@@ -6,12 +6,18 @@ export default function ListOfAgents (params) {
     const { agent } = params
     const {agents} = useAgents({agent})
 
-    return agents.map(({ uuid, displayIconSmall, displayName }) =>
-        <AgentsIcon 
-        key={uuid}
-        agentId={uuid}
-        displayIconSmall={displayIconSmall}
-        displayName={displayName}
-        />
+    return (
+    <div className="flex flex-wrap p-4">
+        {
+            agents.map(({ uuid, displayIconSmall, displayName }) =>
+                <AgentsIcon 
+                    key={uuid}
+                    agentId={uuid}
+                    displayIconSmall={displayIconSmall}
+                    displayName={displayName}
+                />
+            )
+        }
+    </div>
     )
 }

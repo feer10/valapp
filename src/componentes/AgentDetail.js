@@ -11,13 +11,16 @@ export default function AgentDetail () {
     if (!agent) return null
 
     return (
-        <div>
+        <div className="flex p-md flex-col relative text-white items-center justify-center">
             <div>
-                <div className="text-xl p-sm">Agent Details</div>
+                <div className="absolute left-5 top-0 text-xl p-sm underline">Agent Details</div>
             </div>
-            <h1 className="text-3xl p-sm">{agent.displayName}</h1>
+            <h1 className="text-3xl p-sm pt-12">{agent.displayName}</h1>
             <div>
-                <img src={agent.displayIconSmall} alt={agent.displayName} className="rounded-full bg-gray-100"/>
+                <img src={agent.bustPortrait} alt={agent.displayName} className="max-h-80"/>
+            </div>
+            <div className="pt-8">
+                {agent.description}
             </div>
         </div>
     )

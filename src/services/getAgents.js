@@ -7,9 +7,9 @@ export default function getAgents ({ agent_uuid = '' } = {}) {
             const {data} = response
             if (Array.isArray(data)) {
                 const agents = data.map(agent => {
-                    const { displayIconSmall, displayName, uuid } = agent
+                    const { displayIconSmall, displayName, uuid, description, bustPortrait, role } = agent
 
-                    return { displayIconSmall, displayName, uuid }
+                    return { displayIconSmall, displayName, uuid, description, bustPortrait, role }
                 })
                 return agents
             }
