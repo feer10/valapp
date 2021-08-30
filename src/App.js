@@ -6,6 +6,9 @@ import BottomNav from './componentes/BottomNav';
 import ListOfAgents from './componentes/ListOfAgents';
 import StaticContext from './context/StaticContext';
 import {AgentsContextProvider} from './context/AgentsContext';
+import MainPage from './componentes/MainPage';
+import ListOfWeapons from './componentes/ListOfWeapons';
+import { WeaponsContextProvider } from './context/WeaponsContext';
 
 // import { createStore } from 'redux'
 // import { composeWithDevTools } from 'redux-devtools-extension';
@@ -22,7 +25,7 @@ function App() {
         <div className="App">
           <header className="fixed w-full	top-0 h-20 bg-gray-800
           flex flex-wrap text-white p-4 items-center shadow-lg justify-center">
-            <img src={process.env.PUBLIC_URL + "/valorantlogo.png"} alt='logo' className="h-full" />
+            <img src={`${process.env.PUBLIC_URL}/valorantlogo.png`} alt='logo' className="h-full" />
           </header>
           <section className="main_wrapper pb-20 pt-20 bg-gray-800 min-h-screen
           flex flex-wrap text-white items-center justify-center">
@@ -34,17 +37,19 @@ function App() {
                 <Route exact path='/agents'>
                   <ListOfAgents/>
                 </Route>
-                <Route path='/weapons'>
-                  <ListOfAgents/>
-                </Route>
+                <WeaponsContextProvider>
+                  <Route path='/weapons'>
+                    <ListOfWeapons/>
+                  </Route>
+                </WeaponsContextProvider>
                 <Route path='/maps'>
                   <ListOfAgents/>
                 </Route>
-                <Route path='/Bundles'>
+                <Route path='/bundles'>
                   <ListOfAgents/>
                 </Route>
                 <Route exact path='/'>
-                  <ListOfAgents/>
+                  <MainPage/>
                 </Route>
               </AgentsContextProvider>
             </Switch>

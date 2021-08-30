@@ -7,7 +7,7 @@ export default function ListOfAgents (params) {
     const {agents} = useAgents({agent})
 
     return (
-    <div className="flex flex-wrap p-4">
+    <div className="flex flex-wrap p-4 justify-center">
         {
             agents.map(({ uuid, displayIconSmall, displayName }) =>
                 <AgentsIcon 
