@@ -14,7 +14,7 @@ export default function ListOfWeapons (params) {
         <div className="flex flex-wrap p-4 justify-center">
             {
                 Object.entries(grouped_weapons).map(([id, value]) => (
-                    <div className="border border-white">
+                    <div className="border border-white mb-6">
                         <h2 className="block text-3xl p-sm underline">{id.split("::")[1]}</h2>
                         <div className="flex flex-wrap p-4 justify-center">
                             {

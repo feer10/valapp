@@ -28,7 +28,7 @@ export default function BottomNav () {
 
     return (
         <nav className="fixed border-t border-red-500 w-full bottom-0 h-18 bg-gray-800
-            flex flex-wrap text-white items-center shadow-up justify-between">
+            flex flex-wrap text-white items-center shadow-up justify-between z-50">
             {activeClass.menuLinks.map((elements, index) => (
                 <Link 
                     key={index+elements.name}

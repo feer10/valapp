@@ -9,6 +9,10 @@ import {AgentsContextProvider} from './context/AgentsContext';
 import MainPage from './componentes/MainPage';
 import ListOfWeapons from './componentes/ListOfWeapons';
 import { WeaponsContextProvider } from './context/WeaponsContext';
+import ListOfMaps from './componentes/ListOfMaps';
+import { MapsContextProvider } from './context/MapsContext';
+import { BundlesContextProvider } from './context/BundlesContext';
+import ListOfBundles from './componentes/ListOfBundles';
 
 // import { createStore } from 'redux'
 // import { composeWithDevTools } from 'redux-devtools-extension';
@@ -23,7 +27,7 @@ function App() {
     <BrowserRouter>
       <StaticContext.Provider value={{}}>
         <div className="App">
-          <header className="fixed w-full	top-0 h-20 bg-gray-800
+          <header className="fixed w-full	top-0 h-20 z-50 bg-gray-800
           flex flex-wrap text-white p-4 items-center shadow-lg justify-center">
             <img src={`${process.env.PUBLIC_URL}/valorantlogo.png`} alt='logo' className="h-full" />
           </header>
@@ -42,12 +46,16 @@ function App() {
                     <ListOfWeapons/>
                   </Route>
                 </WeaponsContextProvider>
-                <Route path='/maps'>
-                  <ListOfAgents/>
-                </Route>
-                <Route path='/bundles'>
-                  <ListOfAgents/>
-                </Route>
+                <MapsContextProvider>
+                  <Route path='/maps'>
+                    <ListOfMaps/>
+                  </Route>
+                </MapsContextProvider>
+                <BundlesContextProvider>
+                  <Route path='/bundles'>
+                    <ListOfBundles/>
+                  </Route>
+                </BundlesContextProvider>
                 <Route exact path='/'>
                   <MainPage/>
                 </Route>
