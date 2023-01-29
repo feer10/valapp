@@ -1,5 +1,6 @@
+/* eslint-disable no-undef */
 import React from 'react';
-import {BrowserRouter, Route, Switch} from 'react-router-dom'
+import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import './App.css';
 import AgentDetail from './componentes/AgentDetail';
 import BottomNav from './componentes/BottomNav';
@@ -8,10 +9,7 @@ import StaticContext from './context/StaticContext';
 import {AgentsContextProvider} from './context/AgentsContext';
 import MainPage from './componentes/MainPage';
 import ListOfWeapons from './componentes/ListOfWeapons';
-import { WeaponsContextProvider } from './context/WeaponsContext';
 import ListOfMaps from './componentes/ListOfMaps';
-import { MapsContextProvider } from './context/MapsContext';
-import { BundlesContextProvider } from './context/BundlesContext';
 import ListOfBundles from './componentes/ListOfBundles';
 
 // import { createStore } from 'redux'
@@ -33,34 +31,16 @@ function App() {
           </header>
           <section className="main_wrapper pb-20 pt-20 bg-gray-800 min-h-screen
           flex flex-wrap text-white items-center justify-center">
-            <Switch>
-              <AgentsContextProvider>
-                <Route exact path='/agents/:agentId'>
-                  <AgentDetail/>
-                </Route>
-                <Route exact path='/agents'>
-                  <ListOfAgents/>
-                </Route>
-                <WeaponsContextProvider>
-                  <Route path='/weapons'>
-                    <ListOfWeapons/>
-                  </Route>
-                </WeaponsContextProvider>
-                <MapsContextProvider>
-                  <Route path='/maps'>
-                    <ListOfMaps/>
-                  </Route>
-                </MapsContextProvider>
-                <BundlesContextProvider>
-                  <Route path='/bundles'>
-                    <ListOfBundles/>
-                  </Route>
-                </BundlesContextProvider>
-                <Route exact path='/'>
-                  <MainPage/>
-                </Route>
-              </AgentsContextProvider>
-            </Switch>
+            <AgentsContextProvider>
+              <Routes>
+                  <Route exact path='/agents/:agentId' element={ <AgentDetail /> } />
+                  <Route exact path='/agents' element={ <ListOfAgents/> } />
+                  <Route path='/weapons' element={ <ListOfWeapons/> } />
+                  <Route path='/maps' element={ <ListOfMaps/> } />
+                  <Route path='/bundles' element={ <ListOfBundles/> } />
+                  <Route exact path='/' element={ <MainPage/> } />
+              </Routes>
+            </AgentsContextProvider>
           </section>
           <BottomNav/>
         </div>

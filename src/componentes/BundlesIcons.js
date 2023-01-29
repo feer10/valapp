@@ -1,6 +1,7 @@
+/* eslint-disable react/no-unknown-property */
 import React from 'react'
 
-export default function BundlesIcons ({displayIcon, displayName, bundleId}) {
+export default function BundlesIcons ({displayIcon, displayName}) {
     return (     
         <div className="p-sm w-full flex flex-col
         items-center justify-center relative">

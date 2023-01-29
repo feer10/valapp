@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function MapsIcons ({splash, displayName, mapId}) {
+export default function MapsIcons ({splash, displayName}) {
     return (     
         <div className="p-sm w-full flex flex-col
         items-center justify-center relative">
