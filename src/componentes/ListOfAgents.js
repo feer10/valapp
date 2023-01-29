@@ -1,23 +1,28 @@
 import React from 'react'
 import AgentsIcon from './AgentsIcons'
-import { useAgents } from '../hooks/useAgents';
+import { useGetDataByNameQuery } from '../services/valorantApi'
 
-export default function ListOfAgents (params) {
-    const { agent } = params
-    const {agents} = useAgents({agent})
+export default function ListOfAgents () {
+const { data, error, isLoading } = useGetDataByNameQuery('agents')
 
-    return (
-    <div className="flex flex-wrap p-4 justify-center">
-        {
-            agents.map(({ uuid, displayIconSmall, displayName }) =>
-                <AgentsIcon 
-                    key={uuid}
-                    agentId={uuid}
-                    displayIconSmall={displayIconSmall}
-                    displayName={displayName}
-                />
-            )
-        }
-    </div>
-    )
+return (
+  <div className="flex flex-wrap p-4 justify-center">
+    {
+      error ? (
+        <>Oh no, there was an error</>
+      ) : isLoading ? (
+        <>Loading...</>
+      ) : data ? (
+        data.data.map(({ uuid, displayIconSmall, displayName }) =>
+          <AgentsIcon 
+            key={uuid}
+            agentId={uuid}
+            displayIconSmall={displayIconSmall}
+            displayName={displayName}
+          />
+        )
+      ) : null
+    }
+  </div>
+  )
 }

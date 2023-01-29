@@ -7,7 +7,7 @@ export default function WeaponsIcons ({displayIcon, displayName, weaponId, categ
         items-center justify-center agent_icon_wrapper
         hover:bg-gray-100 hover:text-black hover:rounded-xl" data-category={category}>
             <Link to={`/weapons/${weaponId}`}>
-                <img src={displayIcon} alt={displayName} className=""/>
+                <img loading="lazy" src={displayIcon} alt={displayName} className=""/>
                 <h2 className="text-lg p-sm">{displayName}</h2>
             </Link>
         </div>
