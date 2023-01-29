@@ -20,9 +20,6 @@
     "plugins": [
         "react"
     ],
-    "ignorePatterns": [
-        "*.config.js"
-    ],
     "rules": {
         "react/prop-types": "off"
     }
