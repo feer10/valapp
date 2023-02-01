@@ -1,6 +1,6 @@
 import React from 'react'
 import { useParams } from 'react-router'
-import { useGetAgentByNameQuery } from '../services/valorantApi'
+import { useGetAgentByNameQuery } from '../../services/valorantApi'
 
 export default function AgentDetail () {
 	const { agentId } = useParams()

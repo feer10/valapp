@@ -1,6 +1,6 @@
 import React from 'react'
-import MapsIcons from './MapsIcons';
-import { useGetDataByNameQuery } from '../services/valorantApi'
+import MapsIcons from './components/MapsIcons';
+import { useGetDataByNameQuery } from '../../services/valorantApi'
 
 export default function ListOfMaps () {
   const { data, error, isLoading } = useGetDataByNameQuery('maps')

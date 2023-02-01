@@ -1,6 +1,6 @@
 import React from 'react'
-import WeaponsIcons from './WeaponsIcons'
-import { useGetDataByNameQuery } from '../services/valorantApi'
+import WeaponsIcons from './components/WeaponsIcons'
+import { useGetDataByNameQuery } from '../../services/valorantApi'
 import _ from 'lodash';
 
 export default function ListOfWeapons () {

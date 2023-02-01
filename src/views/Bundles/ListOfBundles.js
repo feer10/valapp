@@ -1,6 +1,6 @@
 import React from 'react'
-import BundlesIcons from './BundlesIcons';
-import { useGetDataByNameQuery } from '../services/valorantApi'
+import BundlesIcons from './components/BundlesIcons';
+import { useGetDataByNameQuery } from '../../services/valorantApi'
 
 export default function ListOfBundles () {
   const { data, error, isLoading } = useGetDataByNameQuery('bundles')

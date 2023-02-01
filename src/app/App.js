@@ -2,17 +2,20 @@
 import React from 'react';
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import '../styles/App.css';
-import AgentDetail from '../componentes/AgentDetail';
+import AgentDetail from '../views/Agents/AgentDetail';
 import BottomNav from '../componentes/BottomNav';
-import ListOfAgents from '../componentes/ListOfAgents';
-import MainPage from '../componentes/MainPage';
-import ListOfWeapons from '../componentes/ListOfWeapons';
-import ListOfMaps from '../componentes/ListOfMaps';
-import ListOfBundles from '../componentes/ListOfBundles';
+import ScrollToTop from '../componentes/ScrollToTop';
+import ListOfAgents from '../views/Agents/ListOfAgents';
+import Home from '../views/Home/Home';
+import ListOfWeapons from '../views/Weapons/ListOfWeapons';
+import ListOfMaps from '../views/Maps/ListOfMaps';
+import WeaponsDetail from '../views/Weapons/WeaponsDetail';
+import ListOfBundles from '../views/Bundles/ListOfBundles';
 
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <div className="App">
         <header className="fixed w-full	top-0 h-20 z-50 bg-gray-800
         flex flex-wrap text-white p-4 items-center shadow-lg justify-center">
@@ -23,10 +26,11 @@ function App() {
           <Routes>
             <Route exact path='/agents/:agentId' element={ <AgentDetail /> } />
             <Route exact path='/agents' element={ <ListOfAgents/> } />
+            <Route path='/weapons/:weaponId' element={ <WeaponsDetail/> } />
             <Route path='/weapons' element={ <ListOfWeapons/> } />
             <Route path='/maps' element={ <ListOfMaps/> } />
             <Route path='/bundles' element={ <ListOfBundles/> } />
-            <Route exact path='/' element={ <MainPage/> } />
+            <Route exact path='/' element={ <Home/> } />
           </Routes>
         </section>
         <BottomNav/>
