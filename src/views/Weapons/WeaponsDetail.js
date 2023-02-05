@@ -1,6 +1,7 @@
 import React from 'react'
 import { useParams } from 'react-router'
 import WeaponStats from './components/WeaponStats'
+import SkinsIcons from './components/SkinsIcons'
 import { useGetWeaponByNameQuery } from '../../services/valorantApi'
 
 export default function WeaponsDetails () {
@@ -31,6 +32,21 @@ export default function WeaponsDetails () {
 								reloadTimeSeconds={weapon.weaponStats?.reloadTimeSeconds}
 								wallPenetration={weapon.weaponStats?.wallPenetration}
 							/>
+						}
+					</div>
+					<div className='pt-8'>
+						<h2 className=' text-2xl underline mb-3'>Skins</h2>
+						{
+							weapon.skins.map(({ uuid, displayIcon, displayName }) =>
+								displayIcon && displayName !== 'Random Favorite Skin' &&
+								!displayName.includes('Standard') &&
+									<SkinsIcons 
+										key={uuid}
+										weaponId={uuid}
+										displayIcon={displayIcon}
+										displayName={displayName}
+									/>
+							)
 						}
 					</div>
 				</div>

@@ -7,7 +7,7 @@ const { data, error, isLoading } = useGetDataByNameQuery('agents')
 const agents = data && data.data;
 
   return (
-    <div className="flex flex-wrap p-4 justify-center">
+    <div className="flex flex-wrap p-4 justify-around">
       {
         error ? (
           <>Oh no, there was an error</>
