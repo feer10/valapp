@@ -3,8 +3,8 @@ import React from 'react';
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import '../styles/App.css';
 import AgentDetail from '../views/Agents/AgentDetail';
-import BottomNav from '../componentes/BottomNav';
-import ScrollToTop from '../componentes/ScrollToTop';
+import BottomNav from '../components/BottomNav';
+import ScrollToTop from '../components/ScrollToTop';
 import ListOfAgents from '../views/Agents/ListOfAgents';
 import Home from '../views/Home/Home';
 import ListOfWeapons from '../views/Weapons/ListOfWeapons';
