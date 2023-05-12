@@ -9,8 +9,10 @@ import ListOfAgents from '../views/Agents/ListOfAgents';
 import Home from '../views/Home/Home';
 import ListOfWeapons from '../views/Weapons/ListOfWeapons';
 import ListOfMaps from '../views/Maps/ListOfMaps';
+import MapDetail from '../views/Maps/MapDetail';
 import WeaponsDetail from '../views/Weapons/WeaponsDetail';
 import ListOfBundles from '../views/Bundles/ListOfBundles';
+import BundleDetails from '../views/Bundles/BundleDetail';
 
 function App() {
   return (
@@ -28,7 +30,9 @@ function App() {
             <Route exact path='/agents' element={ <ListOfAgents/> } />
             <Route path='/weapons/:weaponId' element={ <WeaponsDetail/> } />
             <Route path='/weapons' element={ <ListOfWeapons/> } />
+            <Route path='/maps/:mapId' element={ <MapDetail/> } />
             <Route path='/maps' element={ <ListOfMaps/> } />
+            <Route path='/bundles/:bundleId' element={ <BundleDetails/> } />
             <Route path='/bundles' element={ <ListOfBundles/> } />
             <Route exact path='/' element={ <Home/> } />
           </Routes>

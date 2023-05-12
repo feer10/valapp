@@ -14,9 +14,21 @@ export const valorantApi = createApi({
     getWeaponByName: builder.query({
       query: (uuid) => `weapons/${uuid}`,
     }),
+    getMapByName: builder.query({
+      query: (uuid) => `maps/${uuid}`,
+    }),
+    getBundleByName: builder.query({
+      query: (uuid) => `bundles/${uuid}`,
+    }),
   }),
 })
 
 // Export hooks for usage in functional components, which are
 // auto-generated based on the defined endpoints
-export const { useGetDataByNameQuery, useGetAgentByNameQuery, useGetWeaponByNameQuery } = valorantApi
+export const { 
+  useGetDataByNameQuery,
+  useGetAgentByNameQuery,
+  useGetWeaponByNameQuery,
+  useGetMapByNameQuery,
+  useGetBundleByNameQuery
+ } = valorantApi
